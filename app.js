@@ -40,7 +40,7 @@ async function start() {
 
 		// console.log('MongoDB success');
 
-		app.listen(process.env.PORT, () => {
+		app.listen(process.env.PORT || 6050, () => {
 			console.log(`Server started on port ${process.env.PORT}...`);
 		});
 	} catch (e) {
