@@ -34,7 +34,6 @@ async function start() {
 			initDatabase();
 		});
 
-		// await mongoose.connect(config.get('mongoUri'));
 		await mongoose.connect(config.get(process.env.MONGODB_URI));
 
 		console.log('MongoDB success');
