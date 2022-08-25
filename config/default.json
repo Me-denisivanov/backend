@@ -1,0 +1,7 @@
+{
+  "port": 6050,
+  "mongoUri": "mongodb+srv://denis:test1234@cluster0.2joxzmz.mongodb.net/app?retryWrites=true&w=majority",
+  "accessSecret": "super secret from backend",
+  "refreshSecret": "super refresh key from backend"
+}
+ 
