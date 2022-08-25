@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
 app.use(cors());
 
-app.use('/api', routes);
+app.use('/', routes);
+// app.use('/api', routes);
 
 // const PORT = config.get('port') ?? 6050;
 
@@ -40,7 +41,7 @@ async function start() {
 		console.log('MongoDB success');
 
 		app.listen(process.env.PORT || 6050, () => {
-			console.log(`Server started on port ${6050}...`);
+			console.log(`Server started on port ${process.env.PORT}...`);
 		});
 	} catch (e) {
 		console.log(e);
