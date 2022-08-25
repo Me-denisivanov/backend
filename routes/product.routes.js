@@ -22,7 +22,7 @@ const upload = multer({ storage });
 //Добавление картинки
 router.post('/upload', upload.single('image'), (req, res) => {
 	res.json({
-		url: `/uploads/create/${req.file.originalname}`,
+		url: `uploads/create/${req.file.originalname}`,
 	});
 });
 // /PRODUCT

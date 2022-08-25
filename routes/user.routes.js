@@ -39,7 +39,7 @@ router.patch('/:userId', auth, async (req, res) => {
 
 router.post('/upload', auth, upload.single('image'), (req, res) => {
 	res.json({
-		url: `/uploads/user/${req.file.originalname}`,
+		url: `uploads/user/${req.file.originalname}`,
 	});
 });
 
