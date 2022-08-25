@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use('/api', routes);
 
-const PORT = config.get('port') ?? 6050;
+// const PORT = config.get('port') ?? 6050;
 
 if (process.env.NODE_ENV === 'production') {
 	app.use('/', express.static(path.join(__dirname, 'client')));
