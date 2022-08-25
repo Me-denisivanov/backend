@@ -9,9 +9,6 @@ const { getCorrectCount } = require('../helpers/getCorrectCount');
 
 const storage = multer.diskStorage({
 	destination: (_, __, cb) => {
-		if (!fs.existsSync('user')) {
-			fs.mkdirSync('user');
-		}
 		cb(null, 'uploads/user');
 	},
 	filename: (_, file, cb) => {

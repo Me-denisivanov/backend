@@ -11,9 +11,6 @@ const router = express.Router({ mergeParams: true });
 
 const storage = multer.diskStorage({
 	destination: (_, __, cb) => {
-		if (!fs.existsSync('create')) {
-			fs.mkdirSync('create');
-		}
 		cb(null, 'uploads/create');
 	},
 	filename: (_, file, cb) => {
