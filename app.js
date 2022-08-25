@@ -14,8 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
 app.use(cors());
 
-app.use('/', routes);
-// app.use('/api', routes);
+app.use('/api', routes);
 
 // const PORT = config.get('port') ?? 6050;
 
