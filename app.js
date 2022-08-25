@@ -27,15 +27,18 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
+mongoose
+	.connect(process.env.MONGODB_URI)
+	.then(() => console.log('OK'))
+	.catch((err) => console.log(err));
+
 async function start() {
 	try {
 		mongoose.connection.once('open', () => {
 			initDatabase();
 		});
 
-		await mongoose.connect(process.env.MONGODB_URI);
-
-		console.log('MongoDB success');
+		// console.log('MongoDB success');
 
 		app.listen(process.env.PORT || 6050, () => {
 			console.log(`Server started on port ${process.env.PORT || 6050}...`);
