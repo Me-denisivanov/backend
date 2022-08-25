@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const fs = require('fs');
 
 const User = require('../models/User');
 const router = express.Router({ mergeParams: true });
@@ -8,6 +9,9 @@ const { getCorrectCount } = require('../helpers/getCorrectCount');
 
 const storage = multer.diskStorage({
 	destination: (_, __, cb) => {
+		if (!fs.existsSync('user')) {
+			fs.mkdirSync('user');
+		}
 		cb(null, 'uploads/user');
 	},
 	filename: (_, file, cb) => {
