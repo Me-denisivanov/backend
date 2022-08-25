@@ -15,7 +15,7 @@ app.use('/uploads', express.static('uploads'));
 app.use(cors());
 
 app.use('/api', routes);
-//HELLO
+//HELLOsdsd
 if (process.env.NODE_ENV === 'production') {
 	app.use('/', express.static(path.join(__dirname, 'client')));
 
