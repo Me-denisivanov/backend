@@ -11,7 +11,7 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/uploads', express.static('uploads'));
+app.use('/api/uploads', express.static('uploads'));
 app.use(cors());
 
 app.use('/api', routes);
@@ -27,13 +27,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 async function start() {
-	console.log(process.env);
 	try {
 		mongoose.connection.once('open', () => {
 			initDatabase();
 		});
 
-		await mongoose.connect(process.env.MONGODB_URI);
+		await mongoose.connect(
+			process.env.MONGODB_URI ||
+				'mongodb+srv://denis:test1234@cluster0.2joxzmz.mongodb.net/app?retryWrites=true&w=majority'
+		);
 
 		console.log('MongoDB success');
 
