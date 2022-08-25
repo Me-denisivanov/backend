@@ -27,6 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 async function start() {
+	console.log(process.env);
 	try {
 		mongoose.connection.once('open', () => {
 			initDatabase();
